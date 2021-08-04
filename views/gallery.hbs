@@ -1,4 +1,4 @@
-<div class="cover-container d-flex w-100 p-3 mx-auto flex-column">
+<div class="cover-container d-flex h-100 w-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
     <div>
       <h3 class="float-md-start mb-0">Upload File Example</h3>
@@ -15,11 +15,11 @@
       <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
           <h1 class="fw-light">Gallery example</h1>
-          <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator,
-            etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
         </div>
       </div>
     </section>
+
+    {{#if fileArr}}
 
     <div class="album py-5 bg-light">
       <div class="container">
@@ -29,11 +29,8 @@
 
             {{#each fileArr}}
             <div class="card shadow-sm">
-              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
-                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <title>Placeholder</title>
-                <img src={{this.src}}>
-              </svg>
+
+              <img src="{{this.src}}">
 
               <div class="card-body">
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
@@ -54,9 +51,19 @@
       </div>
     </div>
 
+    {{else}}
+
+    <p class="lead text-muted">Images not loaded</p>
+
+    {{/if}}
+
   </main>
 
   <footer class="mt-auto text-white-50">
-    <p>Fork my <a href="https://github.com/Zzaaf/Upload-File-Example" class="text-white">GitHub</a>.</p>
+    <span>
+      <a href="https://github.com/Zzaaf/Upload-File-Example" target="_blank">
+        <i class="bi bi-github"></i>
+      </a>
+    </span>
   </footer>
 </div>
